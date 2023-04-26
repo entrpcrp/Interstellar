@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bk4rc454qdeir"]
+
+[ext_resource type="Texture2D" uid="uid://uxpik8egherg" path="res://Sprites/Ship/Idle.png" id="1_1mgeo"]
+[ext_resource type="Texture2D" uid="uid://cc316m0fdp4w5" path="res://Sprites/Ship/engine/1.png" id="2_hpdue"]
+[ext_resource type="Texture2D" uid="uid://bas2jeurnosec" path="res://Sprites/Ship/engine/2.png" id="3_tmesa"]
+[ext_resource type="Texture2D" uid="uid://6bayynfu3nlk" path="res://Sprites/Ship/engine/3.png" id="4_6v48a"]
+[ext_resource type="Texture2D" uid="uid://rfh2wfme5ghp" path="res://Sprites/Ship/engine/4.png" id="5_s4d2a"]
+[ext_resource type="Texture2D" uid="uid://qcatp0df02sk" path="res://Sprites/Ship/thrst/1.png" id="6_ftcq7"]
+[ext_resource type="Texture2D" uid="uid://bt6iyaerhs6nh" path="res://Sprites/Ship/thrst/2.png" id="7_cetsy"]
+[ext_resource type="Texture2D" uid="uid://cbui8op80x70p" path="res://Sprites/Ship/thrst/3.png" id="8_wyxx4"]
+[ext_resource type="Texture2D" uid="uid://c8tr7fkqeajqq" path="res://Sprites/Ship/thrst/4.png" id="9_uxj6k"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="10_ybv1h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fer0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hpdue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tmesa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6v48a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s4d2a")
+}],
+"loop": false,
+"name": &"engine_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1mgeo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ftcq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cetsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wyxx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uxj6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wyxx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cetsy")
+}],
+"loop": false,
+"name": &"thrust",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Idle" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fer0c")
+animation = &"thrust"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+script = ExtResource("10_ybv1h")

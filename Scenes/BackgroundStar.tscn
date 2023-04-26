@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dniwak2tat6g0"]
+
+[ext_resource type="Texture2D" uid="uid://be0wkq8prbv8c" path="res://Sprites/Star/star1.png" id="1_1jyay"]
+[ext_resource type="Script" path="res://Scripts/BgStar.gd" id="1_verhh"]
+[ext_resource type="Texture2D" uid="uid://cscxaka6qp7st" path="res://Sprites/Star/star2.png" id="2_4qc7o"]
+[ext_resource type="Texture2D" uid="uid://drmhwdggtfej8" path="res://Sprites/Star/star3.png" id="3_462ts"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uapb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1jyay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4qc7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_462ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4qc7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1jyay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1jyay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_verhh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_uapb0")
+frame_progress = 0.498599
